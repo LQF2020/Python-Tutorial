@@ -1,9 +1,10 @@
 # This is a sample Python script.
 import pandas as pd
 
+
 def read_excel_by_file_path(file_path):
     print("*" * 30+" read excel from file path "+"*" * 30)
-    dataframe = pd.read_excel(file_path,sheet_name=0)
+    dataframe = pd.read_excel(file_path,sheet_name=0,engine='openpyxl')
     print(dataframe)
     return dataframe
 
@@ -51,7 +52,7 @@ def print_the_best_student(dataframe):
     print(best_student)
 
 if __name__ == '__main__':
-    file_path = r'C:\Users\OPPO\Desktop\Jola_Python_Lerning\File_IO\src\data.xlsx'
+    file_path = r'./src/data.xlsx'
     dataframe = read_excel_by_file_path(file_path)
     read_info_from_dataframe(dataframe)
     read_cell_from_dataframe(dataframe,{"col":"Class","row":3})
@@ -61,6 +62,3 @@ if __name__ == '__main__':
     print_all_students_class_4(dataframe)
     print_all_female_students(dataframe)
     print_the_best_student(dataframe)
-
-
-
